@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>word-game</title>
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body >
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="alert alert-dark wordp" id ="wordSelect" role="alert"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="alert alert-success"id ="win" role="alert"><h3>WiN</h3></div>
+                </div>
+                <div class="col-4" >
+                    <div class="alert alert-danger"id="loss" role="alert"><h3>LOsS</h3></div>
+                </div>
+                <div class="col-4">
+                    <div class="alert alert-secondary"id="move" role="alert"><h3>MovE</h3></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="alert alert-info" id ="letterSelect" role="alert"></div>
+                    </div>
+                </div>
+            <div class="row justify-content-center">
+                <div class="col-12" ><button type="button" class="btn btn-outline-secondary" id ="newGame" onclick=" myfunction()" ><h4>New Game</h4></button></div>
+            </div>
+            
+
+    <script>
+
+    function myfunction(){
+        // -------------------- choise word-------------------------
+        var word=["Can","Lawyer","swarm","pipe","source","mold","null","perfect","smelly","food","cake","warm","town","bring","used"];
+        var randomWord= word[Math.floor(Math.random() * word.length)];
+        var win=0;
+        var loss=0;
+
+//--------------primery Win-----------------------------
+            var primeryWin = document.createElement("p");
+            primeryWin.textContent=0;
+            $("#win").append(primeryWin);
+            
+//--------------------primery Loss-----------------       
+            var primeryLoss = document.createElement("p");
+            primeryLoss.textContent=0;
+            $("#loss").append(primeryLoss);
+
+//---------------primery move-----------------------------            
+            var guess = document.createElement("p");
+            guess.textContent= randomWord.length+2;
+            $("#move").append(guess);
+        
+//-------------------split word----------------------
+            var split1=randomWord.toUpperCase().split("");
+            console.log(split1);
+//----------------frist row--------------------------------           
+
+
+        
+//-------------------------------------------------------------------------         
+var s
+var answerarray=[];
+var count=randomWord.length;;
+for (i=0;i<randomWord.length;i++){
+answerarray[i]="_";
+}
+
+s=answerarray.join(" ");
+document.getElementById("wordSelect").innerHTML=s;
+
+
+document.onkeyup = function(event) {
+        
+            
+        var userInput= event.key;
+            userInput= document.createElement("snap");
+            userInput.classList.add("userIn");
+            userInput.textContent=event.key.toUpperCase();
+            $("#letterSelect").append(userInput);
+            console.log (split1);
+            for (i=0;i<randomWord.length;i++){
+                if (userInput.textContent===split1[i]){
+                answerarray[i]=userInput.textContent;
+                count--;
+            console.log(count)
+                }
+            }
+            document.getElementById("wordSelect").innerHTML=answerarray.join(" ");
+                if(count<=0){
+                alert ("you win");
+                win++;
+                console.log (split1);
+                }
+                guess.textContent--;
+                if(guess.textContent<=0){
+                alert("you lose");
+                loss++;
+                }
+            
+        
+    primeryWin.textContent = win;
+    primeryLoss.textContent = loss;
+        }
+    }
+    myfunction();   
+
+        document.getElementById("newGame").onclick= function resetGame(){
+            document.getElementById("letterSelect").innerHTML=" ";
+            document.getElementById("wordSelect").innerHTML=" ";
+            myfunction();
+        }
+        
+        
+    </script>
+    </body>
+</html>
