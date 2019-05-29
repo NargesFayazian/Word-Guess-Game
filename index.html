@@ -38,37 +38,37 @@
             
 
     <script>
-
-    function myfunction(){
-        // -------------------- choise word-------------------------
-        var word=["Can","Lawyer","swarm","pipe","source","mold","null","perfect","smelly","food","cake","warm","town","bring","used"];
-        var randomWord= word[Math.floor(Math.random() * word.length)];
-        var win=0;
-        var loss=0;
-
-//--------------primery Win-----------------------------
-            var primeryWin = document.createElement("p");
-            primeryWin.textContent=0;
+//--------------------primery win------------------------------------
+         var primeryWin = document.createElement("p");
+            
             $("#win").append(primeryWin);
             
 //--------------------primery Loss-----------------       
             var primeryLoss = document.createElement("p");
-            primeryLoss.textContent=0;
+           
             $("#loss").append(primeryLoss);
 
 //---------------primery move-----------------------------            
             var guess = document.createElement("p");
-            guess.textContent= randomWord.length+2;
+            ;
             $("#move").append(guess);
-        
+
+    function myfunction(){
+// -------------------- choise word-------------------------
+        var word=["Can","Lawyer","swarm","pipe","source","mold","null","perfect","smelly","food","cake","warm","town","bring","used"];
+        var randomWord= word[Math.floor(Math.random() * word.length)];
+        ;
+
+//--------------primery var -----------------------------
+primeryWin.textContent=0;
+primeryLoss.textContent=0; 
+guess.textContent= randomWord.length+2;
+var win=0;
+var loss=0
 //-------------------split word----------------------
             var split1=randomWord.toUpperCase().split("");
             console.log(split1);
-//----------------frist row--------------------------------           
-
-
-        
-//-------------------------------------------------------------------------         
+//----------------frist row--------------------------------                   
 var s
 var answerarray=[];
 var count=randomWord.length;;
@@ -79,7 +79,7 @@ answerarray[i]="_";
 s=answerarray.join(" ");
 document.getElementById("wordSelect").innerHTML=s;
 
-
+//----------------------get key -------------------------------------
 document.onkeyup = function(event) {
         
             
@@ -89,6 +89,7 @@ document.onkeyup = function(event) {
             userInput.textContent=event.key.toUpperCase();
             $("#letterSelect").append(userInput);
             console.log (split1);
+//------------match function ------------------------------------
             for (i=0;i<randomWord.length;i++){
                 if (userInput.textContent===split1[i]){
                 answerarray[i]=userInput.textContent;
@@ -97,12 +98,15 @@ document.onkeyup = function(event) {
                 }
             }
             document.getElementById("wordSelect").innerHTML=answerarray.join(" ");
+//----------------win function---------------------------------------------------
                 if(count<=0){
                 alert ("you win");
                 win++;
                 console.log (split1);
+                return;
                 }
                 guess.textContent--;
+//-----------------loss function------------------------------------------------------------
                 if(guess.textContent<=0){
                 alert("you lose");
                 loss++;
