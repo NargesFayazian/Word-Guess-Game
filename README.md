@@ -3,7 +3,7 @@
 Word Guess Game is a simple version of a hangman style game. The purpose of this assignment was to create a word guess game using JavaScript.
 <hr>
 <h4>Link to game:</h4>
-<span><h5>Repository:</h5><a herf="https://nargesfayazian.github.io/Word-Guess-Game">https://nargesfayazian.github.io/Word-Guess-Game</a></span>
+<span><h5>Repository:</h5><a href="https://nargesfayazian.github.io/Word-Guess-Game">https://nargesfayazian.github.io/Word-Guess-Game</a></span>
 <hr>
 <h4>How to Play:</h4>
 
