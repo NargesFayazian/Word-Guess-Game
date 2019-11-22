@@ -12,7 +12,7 @@ If the user guesses the correct country name before remaining guesses equal zero
 If the user does not guess the correct country name within the allocated number of guesses, then the game resets.
 
 <h4>Tools/Languages Used:</h4>
-JavaScript 
- HTML
-CSS
+JavaScript|  
+ HTML|
+CSS|
 bootstrap
