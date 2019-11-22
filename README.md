@@ -1,9 +1,9 @@
-<img src="/">
+<img src="/assets/Images/word-guess.png" style="wight:6.51ch; hight:2.17ch">
 <h4>Word Guess Game:</h4>
 Word Guess Game is a simple version of a hangman style game. The purpose of this assignment was to create a word guess game using JavaScript.
 <hr>
 <h4>Link to game:</h4>
-<span><h6>Repository:</h6><a herf="https://nargesfayazian.github.io/Word-Guess-Game/">https://nargesfayazian.github.io/Word-Guess-Game/</a><span>
+<span><h5>Repository:</h5><a herf="https://nargesfayazian.github.io/Word-Guess-Game">https://nargesfayazian.github.io/Word-Guess-Game</a></span>
 <hr>
 <h4>How to Play:</h4>
 
@@ -16,4 +16,4 @@ If the user does not guess the correct country name within the allocated number 
     <ol>JavaScript</ol>
     <ol>HTML</ol>
     <ol>CSS</ol>
-    <ol>Bootstrap</ol>S
+    <ol>Bootstrap</ol>
